@@ -1,19 +1,19 @@
 {
-  "name": "react-bootstrap-daterangepicker",
-  "version": "1.0.6",
+  "name": "cake-react-bootstrap-daterangepicker",
+  "version": "1.0.7",
   "description": "A date/time picker for react (using bootstrap). This is a react port of: https://github.com/dangrossman/bootstrap-daterangepicker",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build"
   },
-  "author": "skratchdot",
+  "author": "justinjrussell",
   "repository": {
     "type": "git",
-    "url": "git://github.com/skratchdot/react-bootstrap-daterangepicker.git"
+    "url": "git://github.com/justinjrussell/react-bootstrap-daterangepicker.git"
   },
   "bugs": {
-    "url": "https://github.com/skratchdot/react-bootstrap-daterangepicker/issues"
+    "url": "https://github.com/justinjrussell/react-bootstrap-daterangepicker/issues"
   },
   "license": "Apache-2.0",
   "dependencies": {
