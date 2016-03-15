@@ -1,6 +1,6 @@
 {
   "name": "cake-react-bootstrap-daterangepicker",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A date/time picker for react (using bootstrap). This is a react port of: https://github.com/dangrossman/bootstrap-daterangepicker",
   "main": "./lib/index.js",
   "scripts": {
