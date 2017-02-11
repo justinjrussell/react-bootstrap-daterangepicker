@@ -1,32 +1,68 @@
 {
-  "name": "cake-bootstrap-daterangepicker",
-  "version": "2.1.25",
-  "description": "Date range picker component for Bootstrap",
-  "main": "daterangepicker.js",
-  "style": "daterangepicker.css",
+  "name": "cake-react-bootstrap-daterangepicker",
+  "version": "3.2.2",
+  "description": "A date/time picker for react (using bootstrap). This is a react port of: https://github.com/dangrossman/bootstrap-daterangepicker",
+  "main": "./lib/index.js",
   "scripts": {
-    "scss": "node-sass daterangepicker.scss > daterangepicker.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changelog": "github_changelog_generator -u skratchdot -p react-bootstrap-daterangepicker",
+    "build": "gulp build"
   },
+  "author": "skratchdot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dangrossman/bootstrap-daterangepicker.git"
+    "url": "git://github.com/skratchdot/react-bootstrap-daterangepicker.git"
   },
-  "author": {
-    "name": "Dan Grossman",
-    "email": "dan@dangrossman.info",
-    "url": "http://www.dangrossman.info"
-  },
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dangrossman/bootstrap-daterangepicker/issues"
+    "url": "https://github.com/skratchdot/react-bootstrap-daterangepicker/issues"
   },
-  "homepage": "https://github.com/dangrossman/bootstrap-daterangepicker",
+  "license": "Apache-2.0",
   "dependencies": {
-    "jquery": ">=1.10",
-    "moment": "^2.9.0"
+    "cake-bootstrap-daterangepicker": "^2.1.25",
+    "object-assign": "^4.1.0"
+  },
+  "peerDependencies": {
+    "jquery": ">=2.0.0",
+    "react": ">=15.0.0"
   },
   "devDependencies": {
-    "node-sass": "^3.4.2"
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.3.0",
+    "bootstrap": "^3.3.7",
+    "cheerio": "^0.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-download": "0.0.1",
+    "gulp-less": "^3.1.0",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "jsxhint": "^0.15.1",
+    "moment": "^2.14.1",
+    "react": "^15.3.1",
+    "react-bootstrap": "^0.30.3",
+    "react-dom": "^15.3.1",
+    "request": "^2.74.0",
+    "wordwrap": "^1.0.0"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "bootstrap",
+    "date",
+    "range",
+    "picker",
+    "selector",
+    "datetime",
+    "ui"
+  ],
+  "engines": {
+    "npm": ">=2.13.0",
+    "node": ">=0.12.0"
   }
 }

@@ -14,14 +14,20 @@ var wrap = require('wordwrap')(2, 80);
 
 var port = 8080;
 
-gulp.task('css-copy', function () {
-	gulp.src('./node_modules/bootstrap-daterangepicker/daterangepicker.css')
+// this task downloads the lastest .js and .css from the 'parent'
+// library that we are wrapping for react
+gulp.task('download', function () {
+	// download the .js file
+	download('https://raw.githubusercontent.com/dangrossman/bootstrap-daterangepicker/master/daterangepicker.js')
+		.pipe(gulp.dest('./lib/'));
+	// download the .css files
+	download('https://raw.githubusercontent.com/dangrossman/bootstrap-daterangepicker/master/daterangepicker.css')
 		.pipe(gulp.dest('./css/'));
 });
 
 gulp.task('print-missing-options', function () {
 	var downloadedOptions = require('./lib/get-options')(),
-		options = fs.readFileSync('./node_modules/bootstrap-daterangepicker/daterangepicker.js', 'utf-8')
+		options = fs.readFileSync('./lib/daterangepicker.js', 'utf-8')
 			.toString().split(' ').filter(function (item) {
 				return item.indexOf('options.') === 0;
 			}).map(function (item) {
@@ -33,6 +39,15 @@ gulp.task('print-missing-options', function () {
 		return downloadedOptions.indexOf(item) === -1;
 	});
 	console.log(options);
+});
+
+gulp.task('print-missing-proptypes', function () {
+	var DatePicker = require('./lib/index');
+	var picker = new DatePicker();
+	var missing = picker.options.filter(function (o) {
+		return !DatePicker.propTypes.hasOwnProperty(o);
+	});
+	console.log(missing);
 });
 
 gulp.task('get-options', function () {
@@ -141,7 +156,8 @@ gulp.task('watch', function () {
 	gulp.watch(['./lib/index.js','./demo/src/**/*.js'], ['build']);
 });
 
-gulp.task('update', ['css-copy', 'get-options']);
+gulp.task('check', ['print-missing-options', 'print-missing-proptypes']);
+gulp.task('update', ['download', 'get-options']);
 gulp.task('build', ['lint', 'fonts', 'app-content', 'demo']);
 gulp.task('default', ['build', 'server', 'watch']);
 

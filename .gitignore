@@ -1,6 +1,6 @@
-bower_components
-node_modules
-npm-debug.log
-*.sublime-workspace
-*.sublime-project
-*.sw[onp]
+.idea/
+_ignore/
+node_modules/
+.DS_Store
+.npm-debug.log
+.project
